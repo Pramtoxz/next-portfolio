@@ -33,7 +33,7 @@ export function CurtainWipe() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="text-white text-base sm:text-lg font-medium tracking-tight font-sans"
           >
-            Design by Pramudito
+            Design by Pramudito Metra
           </motion.div>
         </motion.div>
       )}
