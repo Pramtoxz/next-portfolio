@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
+@theme {
+  --font-display: var(--font-display), "Anton", sans-serif;
+  --font-sans: var(--font-sans), "Plus Jakarta Sans", sans-serif;
+  --color-brand-black: #0a0a0a;
+  --color-brand-dark: #121212;
+  --color-brand-surface: #18181b;
+  --color-brand-border: #27272a;
+  --color-brand-muted: #a1a1aa;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #EDEDED;
+  --foreground: #0A0A0A;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  background-color: #0a0a0a;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom marquee keyframes */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-infinite {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee-infinite-reverse {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-reverse 35s linear infinite;
+}
+
+.animate-marquee-infinite:hover,
+.animate-marquee-infinite-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* Accessible focus visible */
+:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
 }
