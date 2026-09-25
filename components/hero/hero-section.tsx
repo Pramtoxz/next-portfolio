@@ -29,7 +29,7 @@ export function HeroSection() {
         <div className="absolute right-4 sm:right-12 bottom-4 sm:bottom-8 z-30 flex flex-col items-center gap-2">
           <a
             href="#about"
-            className="group flex flex-col items-center gap-1.5 text-neutral-600 hover:text-black transition-colors min-h-[44px] justify-center"
+            className="group flex flex-col items-center gap-1 text-neutral-800 hover:text-black transition-colors min-h-[44px] justify-center bg-white/85 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none px-3 py-1.5 sm:p-0 rounded-full border border-black/10 sm:border-0 shadow-xs sm:shadow-none"
             aria-label="Scroll down to About section"
           >
             <span className="text-[11px] sm:text-xs font-medium tracking-tight font-sans">
